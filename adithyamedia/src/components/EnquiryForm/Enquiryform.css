@@ -1,0 +1,200 @@
+.formContainer {
+    border-radius: "10px solid blue";
+}
+
+
+label {
+    display: flex;
+    margin-top: 1rem;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="number"] {
+    padding: 0.65rem 0.5rem;
+    font-size: 1rem;
+    border: 2px solid rgb(19, 18, 18);
+    background-color: rgb(246, 242, 242);
+    color: rgb(42, 33, 33);
+    border-radius: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 400px;
+}
+textarea[name="message"] {
+    padding: 0.65rem 0.5rem;
+    font-size: 1rem;
+    border: 2px solid rgb(19, 18, 18);
+    background-color: rgb(246, 242, 242);
+    color: rgb(42, 33, 33);
+    border-radius: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 400px;
+    height: 70px;
+}
+
+.error {
+    font-size: 12px;
+    color: #e53e3e;
+    margin-top: 0.25rem;
+  }
+
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 1rem;
+    border: 2px solid black;
+    color: var(--gray-700);
+    border-radius: 10px;
+    resize: vertical;
+    background-color: grey;
+    box-sizing: border-box;
+    padding: 0.65rem 0.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
+        "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial,
+        sans-serif;
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid {
+    border: 2px solid #ff7d87;
+    box-shadow: none;
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+    height: 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #e2e8f0;
+    width: 1rem;
+    background-color: white;
+    align-self: center;
+    margin-right: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    input[type="checkbox"] {
+        background-color: #2d3748;
+        border-color: #2d3748;
+    }
+}
+
+input[type="checkbox"]:hover {
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="78.369" height="78.369" viewBox="0 0 78.369 78.369"><path fill="white" d="M78.05 19.015l-48.592 48.59c-.428.43-1.12.43-1.548 0L.32 40.016c-.427-.426-.427-1.12 0-1.547l6.704-6.704c.428-.427 1.12-.427 1.548 0l20.113 20.112 41.113-41.113c.43-.427 1.12-.427 1.548 0l6.703 6.704c.427.427.427 1.12 0 1.548z"/></svg>');
+    background-size: contain;
+    background-color: #4a5568;
+    border: 2px solid #4a5568;
+}
+
+input[type="checkbox"]:focus-visible,
+input[type="checkbox"]:checked:focus-visible {
+    border-color: #4299e1;
+}
+
+@media (prefers-color-scheme: dark) {
+    input[type="checkbox"]:checked {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="78.369" height="78.369" viewBox="0 0 78.369 78.369"><path fill="%23343434" d="M78.05 19.015l-48.592 48.59c-.428.43-1.12.43-1.548 0L.32 40.016c-.427-.426-.427-1.12 0-1.547l6.704-6.704c.428-.427 1.12-.427 1.548 0l20.113 20.112 41.113-41.113c.43-.427 1.12-.427 1.548 0l6.703 6.704c.427.427.427 1.12 0 1.548z"/></svg>');
+        background-color: white;
+        border: 2px solid white;
+    }
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+    padding: 0.5rem 1.25rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    background-color: #4a5568;
+    border: 2px solid #4a5568;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    line-height: initial;
+    transition: background-color 200ms ease-in-out, border 200ms ease-in-out,
+        transform 200ms ease-in-out;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+@media (prefers-color-scheme: dark) {
+
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    button {
+        background-color: white;
+        border: 2px solid white;
+        color: #2d3748;
+    }
+}
+
+@media (hover: hover) {
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover,
+    input[type="button"]:hover,
+    button:hover {
+        cursor: pointer;
+        background-color:#2d3748;
+    }
+}
+
+@media (hover: hover) and (prefers-color-scheme: dark) {
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover,
+    input[type="button"]:hover,
+    button:hover {
+        cursor: pointer;
+        background-color: #e2e8f0;
+    }
+}
+
+button:focus-visible,
+input[type="submit"]:focus-visible,
+input[type="reset"]:focus-visible,
+input[type="button"]:focus-visible {
+    border-color: #4299e1;
+    outline: none;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  width: 400px;
+}
+
+label {
+  margin-top: 1rem;
+}
+
+label.checkbox {
+  font-weight: normal;
+}
+
+button[type="submit"] {
+    margin-top: 1rem;
+  }
