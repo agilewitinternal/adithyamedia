@@ -1,18 +1,31 @@
 import React from 'react';
 import Enquiryform from '../components/EnquiryForm/Enquiryform';
-import {createUseStyles} from 'react-jss'
+import {createUseStyles} from 'react-jss';
+import Updatedform from '../components/EnquiryForm/Updated-form';
+//import App from "./App";
+//import "./App.css";
 
 const Home = () => {
   const classes = styles()
   return (
     <div className={classes.navbar}>
-      <h2>For production email details and time at reachus@adithyamedia.com to schedule a meeting</h2>
+      <Updatedform />
       <Enquiryform />
     </div>
   );
 };
 
+
+/*const root = ReactDOM.creatRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
+*/
+
 export default Home;
+//export default root;
 
 const styles = createUseStyles({
   navbar: {
@@ -20,7 +33,7 @@ const styles = createUseStyles({
     marginTop: "70px", 
     fontSize: "20px",
     display: "flex",
-    flexDirection: "column",
+    flexWrap: "wrap",
     alignItems: "end"
   }
 })

@@ -95,7 +95,11 @@ const Enquiryform = () => {
   };
 
   return (
-    <div>
+    <div className="body-text">
+      <div className="flex-container">
+        <div></div>
+        <div></div>
+      </div>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -137,13 +141,17 @@ const Enquiryform = () => {
               <MyCheckbox name="acceptedTerms">
                 I accept the terms and conditions
               </MyCheckbox>
-              <button
+              <button 
                 disabled={!formik.isValid}
                 className={!formik.isValid ? classes.disableSubmitButton : ""}
                 type="submit"
               >
                 Submit
               </button>
+              <button
+              disabled={!formik.isValid}
+              className={!formik.isValid ? classes.disableSubmitButton : ""}
+              type="clear">Clear</button>
             </Form>
           );
         }}
