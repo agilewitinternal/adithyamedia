@@ -3,7 +3,7 @@ import "./Navbar.css";
 import { navbarItems } from "./SidebarData";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
-import logo from "../../images/logo3.png";
+import logo from "../../images/logo1.png";
 
 const Navbar = ({ toggle }) => {
   return (

@@ -1,10 +1,16 @@
 .formContainer {
-  border-radius: "10px solid blue";
+  padding-right: 20px;
+}
+@media only screen and (max-width: 768px) {
+    .formContainer {
+      padding-right: 50px;
+    }
+    
 }
 
 label {
   display: flex;
-  margin-top: 1rem;
+  margin-top: 10px;
 }
 
 input[type="email"],
@@ -180,7 +186,7 @@ select {
 }
 
 label {
-  margin-top: 1rem;
+  margin-top: 10px;
 }
 
 label.checkbox {
