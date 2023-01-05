@@ -100,7 +100,7 @@ const Enquiryform = () => {
   };
 
   return (
-    <div>
+    <div className="formContainer">
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
