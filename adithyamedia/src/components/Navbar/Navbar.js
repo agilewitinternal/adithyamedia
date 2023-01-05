@@ -3,12 +3,13 @@ import "./Navbar.css";
 import { navbarItems } from "./SidebarData";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
+import logo from "../../images/logo3.png";
 
 const Navbar = ({ toggle }) => {
   return (
     <nav>
       <Link to="/" className="link">
-        <img src={require('../../images/logo3.png')} alt="logo" />
+        <img src={logo} alt="logo" />
       </Link>
       <div className="menu-items">
         {navbarItems.map((item, index) => (
@@ -21,7 +22,7 @@ const Navbar = ({ toggle }) => {
         <FaBars onClick={toggle} />
       </div>
     </nav>
-  )
-}
+  );
+};
 
 export default Navbar;

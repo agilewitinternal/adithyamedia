@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, useField } from "formik";
 import * as Yup from "yup";
 import "./Enquiryform.css";
@@ -52,6 +52,7 @@ const MyCheckbox = ({ children, ...props }) => {
 // And now we can use these
 const Enquiryform = () => {
   const classes = styles();
+  const [status, setStatus] = useState("");
   const initialValues = {
     firstName: "",
     lastName: "",
@@ -67,6 +68,9 @@ const Enquiryform = () => {
       .max(20, "Must be 20 characters or less")
       .required("Required"),
     email: Yup.string().email("Invalid email addresss`").required("Required"),
+    contactnumber: Yup.number()
+      .max(10, "Must be 10 digits")
+      .required("Required"),
     acceptedTerms: Yup.boolean()
       .required("Required")
       .oneOf([true], "You must accept the terms and conditions."),
@@ -75,23 +79,24 @@ const Enquiryform = () => {
       .required("Required"),
   });
   const onSubmit = async (values, { setSubmitting }) => {
-    try {
-      emailjs
-        .send(
-          process.env.REACT_APP_SERVICE_ID,
-          process.env.REACT_APP_TEMPLATE_ID,
-          values,
-          process.env.REACT_APP_USER_ID
-        )
-        .then(() => {
-          console.log("Sent successful");
-        });
-    } catch {
-      console.log("Error");
-    }
-
+    setStatus("Sending...");
+    const { firstName, lastName, email, message } = values;
+    let details = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      message: message,
+    };
+    let response = await fetch("http://localhost:5000/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(details),
+    });
+    let result = await response.json();
+    setStatus(result);
     setSubmitting(false);
-    console.log("values====0,", values);
   };
 
   return (
@@ -125,6 +130,13 @@ const Enquiryform = () => {
                 placeholder="jane@gmail.com"
                 autocomplete="off"
               />
+              <MyTextInput
+                label="Contact Number"
+                name="contactnumber"
+                type="text"
+                placeholder="123-456-7890"
+                autocomplete="off"
+              />
               <MyTextAreaInput
                 label="Message"
                 name="message"
@@ -144,6 +156,7 @@ const Enquiryform = () => {
               >
                 Submit
               </button>
+              <label>{status}</label>
             </Form>
           );
         }}
